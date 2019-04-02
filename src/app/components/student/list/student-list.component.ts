@@ -36,7 +36,8 @@
  	success(data){
  		this.studentListData = data.data;
  		for (var i = 0; i < this.studentListData.length; i++) {
- 			this.studentListData[i].name = this.studentListData[i].first_name +' '+ this.studentListData[i].last_name;
+			 this.studentListData[i].name = this.studentListData[i].first_name +' '+ this.studentListData[i].car_name;
+			 this.studentListData[i].point = this.studentListData[i].pickup_point +' '+ this.studentListData[i].drop_point;
  		}
  	}
 

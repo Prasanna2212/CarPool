@@ -42,7 +42,7 @@
  	ngOnInit() {
  	}
 
- 	// Submit student details form
+ 	// Submit Trip details form
  	doRegister(){
  		if (this.index && this.index != null && this.index != undefined) {
  			this.studentAddForm.value.id = this.index
@@ -71,15 +71,19 @@
  		if (data == null) {
  			this.studentAddForm = this.formBuilder.group({
  				first_name: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				last_name: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				phone: ['',  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
+ 				car_name: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
+				phone: ['',  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
+				pickup_point: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
+				drop_point: ['',  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
  				email: ['',  [Validators.required, ValidationService.emailValidator]]
  			});			
  		}else{
  			this.studentAddForm = this.formBuilder.group({
  				first_name: [data.studentData.first_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				last_name: [data.studentData.last_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
- 				phone: [data.studentData.phone,  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
+ 				car_name: [data.studentData.car_name,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]],
+				phone: [data.studentData.phone,  [Validators.required,ValidationService.checkLimit(5000000000,9999999999)]],
+				pickup_point: [data.studentData.pickup_point,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]], 
+ 				drop_point: [data.studentData.drop_point,  [Validators.required,Validators.minLength(3),Validators.maxLength(50)]], 
  				email: [data.studentData.email,  [Validators.required, ValidationService.emailValidator]]
  			});
  		}

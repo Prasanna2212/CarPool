@@ -2,7 +2,7 @@
 
 <div class="w3-container" *ngIf="studentListData">
 	<div class="w3-panel w3-round-small w3-teal">
-		<h3>Student List <button routerLink="/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New Student</button></h3>
+		<h3>Trip List <button routerLink="/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New Trip</button></h3>
 	</div>
 	<span><i class="w3-medium fa fa-search"></i> Search : <input class="" type="text" [(ngModel)]='filterData'></span>
 
@@ -15,19 +15,23 @@
 			<tr>
 				<th><i class="w3-medium custom-icon fa fa-refresh"></i> Sr. No.</th>
 				<!-- <th>ID</th> -->
-				<th><i class="w3-medium custom-icon fa fa-user"></i> First Name</th>
-				<th><i class="w3-medium custom-icon fa fa-user"></i> Last Name</th>
-				<th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Email</th>
-				<th><i class="w3-medium custom-icon fa fa-phone"></i> Phone</th>
-				<th><i class="w3-medium custom-icon fa fa-pencil"></i> Update</th>
-				<th><i class="w3-medium custom-icon fa fa-trash"></i> Delete</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Name</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i>Car Model</th>
+				<th><i class="w3-medium custom-icon fa fa-envelope-o"></i>Email</th>
+				<th><i class="w3-medium custom-icon fa fa-phone"></i>Phone</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i>Pickup Point</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i>Drop Point</th>
+				<th><i class="w3-medium custom-icon fa fa-pencil"></i>Update</th>
+				<th><i class="w3-medium custom-icon fa fa-trash"></i>Delete</th>
 			</tr>
 			<tr *ngFor="let student of studentListData | filter:filterData; index as i;" appHighlightStudent>
 				<td>{{i +1}}</td>
 				<td class="pointer" [routerLink]="['detail', i]">{{student.first_name}} </td>
-				<td class="pointer" [routerLink]="['detail', i]">{{student.last_name}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{student.car_name}}</td>
 				<td class="pointer" [routerLink]="['detail', i]">{{student.email}}</td>
 				<td class="pointer" [routerLink]="['detail', i]">{{student.phone | phone}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{student.pickup_point}}</td>
+				<td class="pointer" [routerLink]="['detail', i]">{{student.drop_point}}</td>
 				<td><button [routerLink]="['update', i]" class="w3-button w3-blue">Update</button></td>
 				<td><button (click)="deleteStudent(i);" class="w3-button w3-red">Delete</button></td>
 			</tr>

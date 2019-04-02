@@ -34,7 +34,7 @@
  	ngOnInit() {
  	}
 
- 	// Get student details 
+ 	// Get Trip details 
  	getStudentDetails(index:number){
  		let getStudentDetail = this.studentService.getStudentDetails(index);
  		if(getStudentDetail) {

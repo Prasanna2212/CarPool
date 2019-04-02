@@ -50,7 +50,7 @@
        localStorage.setItem('students',JSON.stringify(studentList));
        returnData = {
          code : 200,
-         message : "Student Successfully Updated",
+         message : "Trip Details Successfully Updated",
          data : JSON.parse(localStorage.getItem('students'))
        }    
      }else{      
@@ -101,7 +101,7 @@
 
      let returnData = {
        code : 200,
-       message : "Student Details Fetched",
+       message : "Trip Details Fetched",
        studentData : studentList[index]
      }
 

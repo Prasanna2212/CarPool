@@ -11,7 +11,7 @@ export class UserService {
 	constructor() { }
 
 	doLogin(data){
-		if (data.email == "admin@yopmail.com" && data.password == "admin123") {
+		if (data.email == "admin@u2l.com" && data.password == "u2lmig") {
 			return {
 				code : 200,
 				message : "Login Successful",
